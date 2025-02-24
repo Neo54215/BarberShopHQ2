@@ -1,3 +1,5 @@
 
 barbershop.db
 .ruby-version
+barbershop.db-shm
+barbershop.db-wal
