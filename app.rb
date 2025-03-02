@@ -28,13 +28,8 @@ get '/visit' do
 end
 
 post '/visit' do
-	@username = params[:username]
-	@phone = params[:phone]
-	@datetime = params[:datetime]
-	@master = params[:master]
-	@color = params[:color]
-
-	Client.create :name => @username, :phone => @phone, :datestamp => @datetime, :barber => @master, :color => @color
+	c = Client.new params[:client]
+	c.save
 
 	erb '<h2>Дякую, вас було записано!</h2>'
 end
@@ -45,10 +40,8 @@ get '/contacts' do
 end
 
 post '/contacts' do
-	@email = params[:email]
-	@message = params[:message]
 	
-	Contact.create :email => @email, :message => @message
+	Contact.create params[:contact]
 
 	erb '<h2>Дякую, ваше повідомлення відправлено!</h2>'
 end
