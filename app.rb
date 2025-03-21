@@ -55,3 +55,7 @@ post '/contacts' do
 
 	erb '<h2>Дякую, ваше повідомлення відправлено!</h2>'
 end
+
+get '/barber/:id' do
+	erb :barber
+end
